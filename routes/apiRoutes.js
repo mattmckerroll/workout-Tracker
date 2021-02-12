@@ -15,8 +15,8 @@ router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).then(dbWorkout => {
         dbWorkout.forEach(workout => {
             var totalTime = 0;
-            workout.exercises.forEach(e => {
-                totalTime += e.duration;
+            workout.exercises.forEach(elem => {
+                totalTime += elem.duration;
             });
             workout.totalDuration = totalTime;
 
