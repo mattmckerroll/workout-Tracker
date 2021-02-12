@@ -5,7 +5,7 @@ const router = require("express").Router();
  db.Workout.find({}).then(function (res) {
     console.log("Checking if db is populated");
     if (res.length === 0) {
-         require("./seeders/seed.js");
+         require("../seeders/seed.js");
      }
  });
 
