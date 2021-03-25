@@ -21,7 +21,9 @@ This is an app that can allow you to track multiple types of workouts all on a s
 
 visit the site [here](https://calm-headland-27615.herokuapp.com/)
 
-(currently having an issue with the heroku deployment, but it works if you run it locally!)
+~~(currently having an issue with the heroku deployment, but it works if you run it locally!)~~
+
+note from dev: this has been fixed.
 
 
 ## Usage 
