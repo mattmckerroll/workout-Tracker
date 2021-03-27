@@ -12,7 +12,7 @@ const router = require("express").Router();
 //get workouts
 router.get("/api/workouts", (req, res) => {
 
-    db.Workout.find({}).then(dbWorkout => {
+    db.workout.find({}).then(dbWorkout => {
         dbWorkout.forEach(workout => {
             var totalTime = 0;
             workout.exercises.forEach(elem => {
@@ -31,7 +31,7 @@ router.get("/api/workouts", (req, res) => {
 // add exercise
 router.put("/api/workouts/:id", (req, res) => {
 
-    db.Workout.findOneAndUpdate(
+    db.workout.findOneAndUpdate(
         { _id: req.params.id },
         {
             $inc: { totalDuration: req.body.duration },
@@ -47,7 +47,7 @@ router.put("/api/workouts/:id", (req, res) => {
 
 //create workout
 router.post("/api/workouts", ({ body }, res) => {
-    db.Workout.create(body).then((dbWorkout => {
+    db.workout.create(body).then((dbWorkout => {
         res.json(dbWorkout);
     })).catch(err => {
         res.json(err);
@@ -57,7 +57,7 @@ router.post("/api/workouts", ({ body }, res) => {
 // get workouts in range
 router.get("/api/workouts/range", (req, res) => {
 
-    db.Workout.find({}).then(dbWorkout => {
+    db.workout.find({}).then(dbWorkout => {
         console.log("ALL WORKOUTS");
         console.log(dbWorkout);
 
